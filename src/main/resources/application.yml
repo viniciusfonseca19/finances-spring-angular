@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/finance_db
+    username: root
+    password: Deusmeu19
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+
+jwt:
+  secret: 1b33de917551119c6909fad62d86d6025737664861587fc9421506b4e53eefba
+  expiration: 86400000
+
