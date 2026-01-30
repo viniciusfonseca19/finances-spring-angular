@@ -7,11 +7,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "transactions")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Transaction {
 
@@ -19,24 +18,18 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
     private BigDecimal amount;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private CategoryType type;
-
-    @Column(nullable = false)
     private LocalDate date;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Enumerated(EnumType.STRING)
+    private com.vinicius.finance.enums.TransactionType type;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToOne
+    private User user;
 }
