@@ -1,0 +1,31 @@
+<div class="dashboard-container">
+
+  <header class="dashboard-header">
+    <h1>Dashboard</h1>
+    <button class="logout" (click)="logout()">Sair</button>
+  </header>
+
+  <section class="cards">
+    <div class="card saldo">
+      <span>Saldo Total</span>
+      <strong>R$ {{ saldoTotal }}</strong>
+    </div>
+
+    <div class="card income">
+      <span>Entradas</span>
+      <strong>R$ {{ entradas }}</strong>
+    </div>
+
+    <div class="card expense">
+      <span>Saídas</span>
+      <strong>R$ {{ saidas }}</strong>
+    </div>
+  </section>
+
+  <section class="actions">
+    <button (click)="irParaTransacoes()">
+      Ver transações
+    </button>
+  </section>
+
+</div>

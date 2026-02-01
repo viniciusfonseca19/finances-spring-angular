@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Transações</h1>
+
+  <form (ngSubmit)="addTransaction()" class="form">
+    <input
+      type="text"
+      placeholder="Descrição"
+      [(ngModel)]="description"
+      name="description"
+      required
+    />
+
+    <input
+      type="number"
+      placeholder="Valor"
+      [(ngModel)]="amount"
+      name="amount"
+      required
+    />
+
+    <select [(ngModel)]="type" name="type">
+      <option value="EXPENSE">Despesa</option>
+      <option value="INCOME">Entrada</option>
+    </select>
+
+    <input
+      type="text"
+      placeholder="Categoria"
+      [(ngModel)]="category"
+      name="category"
+      required
+    />
+
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <div class="list">
+    <div
+      class="item"
+      *ngFor="let t of transactions"
+      [class.income]="t.type === 'INCOME'"
+      [class.expense]="t.type === 'EXPENSE'"
+    >
+      <div>
+        <strong>{{ t.description }}</strong>
+        <span>{{ t.category }} • {{ t.date }}</span>
+      </div>
+
+      <div class="value">
+        {{ t.type === 'INCOME' ? '+' : '-' }} R$
+        {{ t.amount }}
+      </div>
+    </div>
+  </div>
+</div>

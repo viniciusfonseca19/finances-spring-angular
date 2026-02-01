@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="card">
+    <h1>FinanceApp</h1>
+    <p class="subtitle">Controle sua vida financeira</p>
+
+    <form (ngSubmit)="submit()" #form="ngForm">
+
+      <div class="field">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          placeholder="seu@email.com"
+        />
+      </div>
+
+      <div class="field">
+        <label>Senha</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          placeholder="••••••••"
+        />
+      </div>
+
+      <button type="submit">Entrar</button>
+
+      <p class="error" *ngIf="error">{{ error }}</p>
+
+      <p class="link">
+        Não tem conta?
+        <a routerLink="/register">Criar agora</a>
+      </p>
+
+    </form>
+  </div>
+</div>

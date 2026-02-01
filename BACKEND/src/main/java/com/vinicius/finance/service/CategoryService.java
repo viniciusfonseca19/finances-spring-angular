@@ -57,7 +57,7 @@ public class CategoryService {
         return CategoryResponseDTO.fromEntity(saved);
     }
 
-    // ❌ deletar categoria
+
     public void delete(Long id) {
 
         User user = getAuthenticatedUser();
